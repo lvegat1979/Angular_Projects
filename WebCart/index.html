@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app = 'myApp'>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>
+        Práctica de Angular
+    </title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+    <script src="app.js"> </script>
+</head>
+<body ng-controller='CartController'>
+
+    <div ng-repeat="item in items" >
+        <span > {{item.productName}} {{item.price | currency}}</span>
+    </div>
+
+    <div>
+        <form  ng-controller="StartUpController">
+            Starting: <!--<input ng-model = "funding.startingEstimate"> -->  <input ng-change="computeNeeded()" ng-model="funding.startingEstimate"> <br>
+            Recomendation: {{funding.needed }} <br>
+            <!-- <button ng-click = "requestFunding()"> Fund my startup! </button>  <br> -->
+            <button ng-click = "reset()"> Reset </button>
+        </form>
+    </div>
+
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active"><a href="1.html">1</a></li>
+        <li><a href="2.html">2</a></li>
+        <li><a href="3.html">3</a></li>
+    </ul>
+
+</body>
+</html>
